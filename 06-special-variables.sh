@@ -12,7 +12,8 @@ echo " PID of the current process: $$"
 sleep 5 &
 echo "PID of the background process command running just now: $!"
 wait $!
-echo "line number: "$LINENO"
-echo"exit status of the last command: $?"
-
+echo "line number: $LINENO"
+echo "shell name: $SHELL"
+echo "current user: $USER"
+echo "current host: $HOSTNAME"
 
