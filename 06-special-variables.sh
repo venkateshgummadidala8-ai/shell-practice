@@ -11,4 +11,6 @@ echo "what is the home directory: $HOME"
 echo " PID of the current process: $$"
 sleep 5 &
 echo "PID of the background process command running just now: $!"
+wait $!
+echo "line number: "$LINENO"
 
