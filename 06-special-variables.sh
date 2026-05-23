@@ -8,4 +8,5 @@ echo "second variable: $2"
 echo "script name: $0"
 echo "which directory: $PWD"
 echo "what is the home directory: $HOME"
+echo " PID of the current process: $$"
 
