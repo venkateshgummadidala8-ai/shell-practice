@@ -19,5 +19,6 @@ if [ $? -ne 0 ]; then
 else 
     echo "mysql istalled succesfully"
 fi
+# comment
 
 
