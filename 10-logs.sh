@@ -3,10 +3,9 @@
 USERID=$(id -u)
 LOGS_DIR=/home/ec2-user/shell-logs
 LOG_FILE=" $LOGS_DIR/$0.log "
-#all the logs will be stored in the above file, we can use this file to check the logs of the script, we can also use this file to check the errors of the script, we can also use this file to check the output of the script, we can also use this file to check the debug logs of the script, we can also use this file to check the info logs of the script, we can also use this file to check the warning logs of the script, we can also use this file to check the error logs of the script, we can also use this file to check the critical logs of the script, we can also use this file to check the alert logs of the script, we can also use this file to check the emergency logs of the script
+#all the logs will be stored in the logs-dir directory and in that directory logs-file is created for storing 
+# $0 will give some name to .log file 
 
-
-# check root access or not
 if [ $USERID -ne 0 ]; then
     echo "please run the script with root access"
     exit 1
@@ -45,5 +44,5 @@ if [ $? -ne 0 ]; then
         dnf install nginx -y &>> $LOG_FILE
         VALIDATE "nginx" $?
 fi
- #### main
+ #### main 
  
