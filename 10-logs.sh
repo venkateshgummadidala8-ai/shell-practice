@@ -2,7 +2,7 @@
 
 USERID=$(id -u)
 LOGS_DIR=/var/log/shell-script
-LOG_FILE=" $LOGS_DIR/$0.log "
+LOGS_FILE=" $LOGS_DIR/$0.log "
 #all the logs will be stored in the logs-dir directory and in that directory logs-file is created for storing 
 # $0 will give some name to .log file 
 
@@ -23,7 +23,7 @@ VALIDATE() {
 }
 
 # echo " i am continuing ....."
-dnf list install mysql &>> $LOG_FILE
+dnf list install mysql &>> $LOGS_FILE
 
 if [ $? -ne 0 ]; then 
     echo " mysql is already installed .....skipping"
@@ -41,7 +41,7 @@ if [ $? -ne 0 ]; then
     echo " nginx is already installed...skipping "
     else 
         echo " installing nginx "
-        dnf install nginx -y &>> $LOG_FILE
+        dnf install nginx -y &>> $LOGS_FILE
         VALIDATE "nginx" $?
 fi
  #### main 
