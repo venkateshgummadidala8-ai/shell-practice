@@ -1,7 +1,7 @@
 #!/bin/bash
 
 USERID=$(id -u)
-LOGS_DIR=/home/ec2-user/shell-logs
+LOGS_DIR=/var/log/shell-script
 LOG_FILE=" $LOGS_DIR/$0.log "
 #all the logs will be stored in the logs-dir directory and in that directory logs-file is created for storing 
 # $0 will give some name to .log file 
