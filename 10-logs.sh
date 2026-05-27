@@ -34,13 +34,14 @@ else
   
 fi    
 
+
 # install nginx
 dnf list installed nginx &>> $LOGS_FILE 
-if [ $? -eq 0 ]; then
+   if [ $? -eq 0 ]; then
     echo " nginx is already installed...skipping " | tee -a $LOGS_FILE
-else 
+      else 
         echo " installing nginx "
         dnf install nginx -y &>> $LOGS_FILE
         VALIDATE "nginx" $?
-fi
+    fi
  
