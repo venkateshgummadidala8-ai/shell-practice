@@ -45,5 +45,5 @@ if [ $? -ne 0 ]; then
         dnf install nginx -y &>> $LOG_FILE
         VALIDATE "nginx" $?
 fi
- 
+ #### main
  
