@@ -15,7 +15,7 @@ fi
 # second arg -> Exit code
 VALIDATE() {
     if [ $2 -ne 0 ]; then 
-        echo " Installing $1 is failed "
+        echo " Installing $1 is failed " | tee -a $LOGS_FILE
         exit 1
     else 
         echo "$1 installed succesfully"
