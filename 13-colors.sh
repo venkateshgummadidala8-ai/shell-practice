@@ -9,7 +9,7 @@ G=\e[32m
 Y=\e[33m
 B=\e[34m
 M=\e[35m
-0=\e[0m
+
 
 
 # check root access or not
@@ -22,7 +22,7 @@ fi
 # second arg -> Exit code
 VALIDATE() {
     if [ $2 -ne 0 ]; then 
-        echo -e " $TIMESTAMP [ERROR] Installing $1 is $R failed $0" | tee -a $LOGS_FILE
+        echo -e " $TIMESTAMP [ERROR] Installing $1 is $R failed" | tee -a $LOGS_FILE
         exit 1
     else 
         echo -e " $TIMESTAMP [INFO] $1 installed $B succesfully" | tee -a $LOGS_FILE
@@ -37,6 +37,6 @@ do
         dnf install $package -y &>> $LOGS_FILE
         VALIDATE "Installing $package" $?
     else
-        echo -e " $TIMESTAMP [INFO] $package $Y is already installed .... $Y skipping $0" | tee -a $LOGS_FILE
+        echo -e " $TIMESTAMP [INFO] $package $Y is already installed .... $Y skipping " | tee -a $LOGS_FILE
     fi
 done
